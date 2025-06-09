@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: CaesarDressing;
+    src: url('Fonts/CaesarDressing-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: Incosolata;
+    src: url('Fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+.main{
+    background-image: url(Images/save\ dementi_narrow2.png);
+    background-size: 99.2vw;
+    background-repeat: repeat;
+}
+.lilguy{
+    position: sticky;
+    width: 20vw;
+    top: 60vh;
+    left: 80vw;
+    z-index: 1;
+}
+.audio{
+    display: none;
+}
+.content{
+    margin: 105vh 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.content h1{
+    font-family: CaesarDressing;
+    font-size: 5vw;
+    text-align: center;
+    margin-bottom: 2vh;
+    background-color: rgb(10, 10, 10);
+    box-shadow: 0px 0px 10px 10px rgba(10, 10, 10);
+}
+.content p {
+    font-family: Inconsolata;
+    font-size: 2vw;
+    text-align: center;
+    width: 60vw;
+    position: relative;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 30vh;
+}
