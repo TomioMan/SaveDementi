@@ -7,18 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Images/TomioManCZ Face.png">
 
-    <script>
-        function setHalfVolume(){
-        var myAudio = document.getElementById("audio1");  
-        myAudio.volume = 0.1;
-        }
-    </script>
+    <audio id="myAudio" src="australia.mp3"></audio>
+
+
     
-    <audio autoplay loop id="audio1" controls="controls" onloadeddata="setHalfVolume()" class="audio">
-        <source src="australia.mp3"  type="audio/mp3">
-    </audio>
 </head>
 <body>
+    <div id="overlay">
+        <h1>Click to open The website</h1>
+    </div>
     <div class="main">
         <img class="lilguy" src="Images/pose-null-2025-06-09-17-14-43.png">
         <div class="content">
@@ -28,5 +25,30 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        const overlay = document.getElementById('overlay');
+
+        let hasPlayed = false;
+
+        // Set your desired volume here (1.0 is max, 0.0 is silent)
+        const audioVolume = 0.2; // ♡ You can change this value to anything between 0.0 - 1.0 ♡
+
+        function setVolume(level) {
+        audio.volume = Math.min(Math.max(level, 0), 1); // keeps value in [0,1] range
+        }
+
+        overlay.addEventListener('click', () => {
+        if (!hasPlayed) {
+            setVolume(audioVolume);
+            audio.play();
+            hasPlayed = true;
+        }
+
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto'; // allow scrolling again
+        });
+    </script>
 </body>
 </html>

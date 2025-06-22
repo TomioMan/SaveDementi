@@ -52,3 +52,23 @@
     background-color: rgba(0, 0, 0, 0.1);
     margin-bottom: 30vh;
 }
+#overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.999);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#overlay h1 {
+    font-family: CaesarDressing;
+    font-size: 8em;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em;
+}
