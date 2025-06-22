@@ -7,39 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Images/TomioManCZ Face.png">
 
-    <audio id="myAudio" src="australia.mp3"></audio>
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-
-    
+    <!-- Your Audio -->
+    <audio id="myAudio" src="australia.mp3" loop></audio>
 </head>
 <body>
     <div id="overlay">
         <h1>Click to open The website</h1>
+        <p>&lpar;open on a computer&rpar;</p>
     </div>
+
     <div class="main">
         <img class="lilguy" src="Images/pose-null-2025-06-09-17-14-43.png">
         <div class="content">
             <div class="header">
-                <h1>Save Dementi!</h1>
-                <p>The only political party on Dementi SMP with a website *EVER* !</p>
+                <h1 data-aos="fade-up">Save Dementi!</h1>
+                <p  data-aos="fade-up">The only political party on Dementi SMP with a website *EVER* !</p>
             </div>
         </div>
     </div>
 
-    <script>
-        const audio = document.getElementById('myAudio');
-        const overlay = document.getElementById('overlay');
+  <!-- AOS JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
-        let hasPlayed = false;
+  <!-- My Script -->
+  <script>
+    const audio = document.getElementById('myAudio');
+    const overlay = document.getElementById('overlay');
 
-        // Set your desired volume here (1.0 is max, 0.0 is silent)
-        const audioVolume = 0.2; // ♡ You can change this value to anything between 0.0 - 1.0 ♡
+    let hasPlayed = false;
 
-        function setVolume(level) {
-        audio.volume = Math.min(Math.max(level, 0), 1); // keeps value in [0,1] range
-        }
+    const audioVolume = 0.2;
 
-        overlay.addEventListener('click', () => {
+    function setVolume(level) {
+        audio.volume = Math.min(Math.max(level, 0), 1);
+    }
+
+    overlay.addEventListener('click', () => {
         if (!hasPlayed) {
             setVolume(audioVolume);
             audio.play();
@@ -47,8 +56,8 @@
         }
 
         overlay.style.display = 'none';
-        document.body.style.overflow = 'auto'; // allow scrolling again
-        });
-    </script>
+        document.body.style.overflow = 'auto';
+    });
+  </script>
 </body>
 </html>

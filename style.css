@@ -2,14 +2,47 @@
     margin: 0;
     padding: 0;
 }
+html {
+    background-color: #0f0f0f;
+}
 @font-face {
     font-family: CaesarDressing;
     src: url('Fonts/CaesarDressing-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: Incosolata;
-    src: url('Fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype');
+    src: url('Fonts/Console.ttf') format('truetype');
 }
+#overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.999);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+    z-index: 10000;
+}
+
+#overlay h1 {
+    font-family: CaesarDressing;
+    font-size: 8em;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em;
+}
+#overlay p {
+    font-size: 2em;
+    color: #7e7e7e;
+    text-align: center;
+    width: 60vw;
+    margin-top: 1em;
+}
+
+
 .main{
     background-image: url(Images/save\ dementi_narrow2.png);
     background-size: 99.2vw;
@@ -21,12 +54,19 @@
     top: 60vh;
     left: 80vw;
     z-index: 1;
+    animation: lilguy 0.705s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+@keyframes lilguy {
+    0% { transform: scaleY(0.95); }
+    50% { transform: scaleY(1.05); }
+    100% { transform: scaleY(0.95); }
 }
 .audio{
     display: none;
 }
 .content{
-    margin: 105vh 0 0 0;
+    margin: 70vh 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,23 +92,6 @@
     background-color: rgba(0, 0, 0, 0.1);
     margin-bottom: 30vh;
 }
-#overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.999);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-#overlay h1 {
-    font-family: CaesarDressing;
-    font-size: 8em;
-    color: #ffffff;
-    text-align: center;
-    padding: 1em;
+.header{
+    z-index: 10;
 }
