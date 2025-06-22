@@ -65,7 +65,7 @@ html {
 }
 @keyframes colourChange {
     0% { filter: hue-rotate(0deg); }
-    50% { filter: hue-rotate(20deg); }
+    50% { filter: hue-rotate(15deg); }
     100% { filter: hue-rotate(0deg); }
 }
 .audio{
@@ -158,7 +158,7 @@ html {
     justify-content: space-between;
     margin-bottom: 10vh;
 }
-.description p {
+.description p, .description h2 {
     font-family: Inconsolata;
     font-size: 1.2vw;
     text-align: justify;
@@ -169,6 +169,14 @@ html {
     background-color: rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 10px;
+}
+.description h2 {
+    font-family: CaesarDressing;
+    font-size: 2.5vw;
+    text-align: center;
+    width: 40vw;
+    margin: -5vh 0 1vh -9vw;
+    color: white;
 }
 .description > div{
     width: 22.5vw;

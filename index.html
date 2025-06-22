@@ -23,7 +23,7 @@
     </div>
 
     <div class="main">
-        <img class="lilguy" src="Images/Save dementi crew.png" id="peekaboo" alt="TomioManCZ">
+        <img class="lilguy" src="Images/Save dementi crew.png" id="peekaboo" alt="TomioManCZ" data-aos="zoom-in-up" data-aos-duration="200">
         <div class="content">
             <div class="header" style="margin-bottom: 10vw;">
                 <h1 data-aos="fade-up">Bring everyone Knowledge</h1>
@@ -31,7 +31,7 @@
                 <span class="hover-zone">
                     <span class="main-text">Our main goal</span>
                     <span class="default-text">, is to bring people together using social conventions and mods!</span>
-                    <span class="hover-text">, is to blow up, and act like I know nobody.</span>
+                    <span class="hover-text">, is to blow up, and act like we dont know nobody.</span>
                     <div class="popup-element"> <img src="https://media1.tenor.com/m/J7t5L2VwV0EAAAAd/my-main-goal-is-to-blow-up-and-act-like-i-don%27t-know-nobody-my-main-goal-is-to-blow-up.gif" alt=""></div>
                 </span>
             </div>
@@ -44,9 +44,14 @@
                     <img class="hover-img" src="Images/reaktor2.png" alt="Hover Image">
                     <p>You wouldnt want this happening to your reactor, would you?</p>
                 </div>
-                <div class="text-content"  data-aos="fade-up">
+                <div data-aos="fade-up">
+                    <h2>Join us in making Dementi SMP a better place for everyone!</h2>
+                    <details>
+                        <summary> what we offer</summary>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, quasi. Deleniti autem modi ipsa consequatur sit molestias nemo magni et incidunt consectetur? Inventore velit iure sint qui aliquam est ratione!</p>
+                    </details>
                     <p>Save Dementi is a political party on the Dementi SMP, founded by TomioManCZ. The party aims to bring positive change to the server, focusing on community engagement and development.</p>
-                    <p>The party's platform includes initiatives for better governance, infrastructure improvements, and fostering a vibrant community spirit. Join us in making Dementi SMP a better place for everyone!</p>
+                    <p>The party's platform includes initiatives for better governance, infrastructure improvements, and fostering a vibrant community spirit.</p>
                 </div>
                 <div>
                     <div class="image-container" id="hoverImage"  data-aos="fade-left">
@@ -58,7 +63,7 @@
 
         </div>
         <footer>
-            <a href="https://tomioman.github.io/Portfolio/"><img src="https://tomioman.github.io/Portfolio/images/logo_text.png" alt=""></a>
+            <a target="_blank" href="https://tomioman.github.io/Portfolio/"><img src="https://tomioman.github.io/Portfolio/images/logo_text.png" alt="" ></a>
             <div>
                 <p>Created by <a href="https://tomioman.github.io/Portfolio/" target="_blank">TomioMan</a> &copy; 2025</p>
                 <p>All rights reserved.</p>
@@ -152,7 +157,7 @@
     const peekaboo = document.getElementById('peekaboo');
 
     function updatePeekabooVisibility() {
-        if (window.scrollY === 0) {
+        if (window.scrollY < 150) {
         peekaboo.style.opacity = '100%';
         peekaboo.style.zIndex = '1000';
         } else {
