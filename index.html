@@ -18,6 +18,7 @@
 <body>
     <div id="overlay">
         <h1>Click to open The website</h1>
+        <p id="loadingText" style=" position: absolute; top: 50vh;">( )</p>
         <p>&lpar;open on a computer&rpar;</p>
     </div>
 
@@ -29,7 +30,7 @@
                 <div class="magic-container">
                 <span class="hover-zone">
                     <span class="main-text">Our main goal</span>
-                    <span class="default-text">, is to bring people useful information, on the things they might not know about mods.</span>
+                    <span class="default-text">, is to bring people together using social conventions and mods!</span>
                     <span class="hover-text">, is to blow up, and act like I know nobody.</span>
                     <div class="popup-element"> <img src="https://media1.tenor.com/m/J7t5L2VwV0EAAAAd/my-main-goal-is-to-blow-up-and-act-like-i-don%27t-know-nobody-my-main-goal-is-to-blow-up.gif" alt=""></div>
                 </span>
@@ -37,10 +38,11 @@
             </div>
 
             <div class="description">
+                <img src="Images/hover me sign.png" class="sign_hoverme" alt="Hover me sign" data-aos="flip-right" data-aos-delay="600" data-aos-duration="600">
                 <div class="image-container" id="hoverImage"  data-aos="fade-right">
                     <img src="Images/reaktor1.png" alt="Normal Image">
                     <img class="hover-img" src="Images/reaktor2.png" alt="Hover Image">
-                    <p>You wouldnt want this happening to your reactor would you?</p>
+                    <p>You wouldnt want this happening to your reactor, would you?</p>
                 </div>
                 <div class="text-content"  data-aos="fade-up">
                     <p>Save Dementi is a political party on the Dementi SMP, founded by TomioManCZ. The party aims to bring positive change to the server, focusing on community engagement and development.</p>
@@ -48,13 +50,21 @@
                 </div>
                 <div>
                     <div class="image-container" id="hoverImage"  data-aos="fade-left">
-                    <img src="Images/reaktor1.png" alt="Normal Image">
-                    <img class="hover-img" src="Images/reaktor2.png" alt="Hover Image">
-                    <p>You wouldnt want this happening to your reactor would you?</p>
+                    <img src="Images/safe working conditions.png" alt="Normal Image">
+                    <img class="hover-img" src="Images/safe working conditions.png" alt="Hover Image">
+                    <p>You wouldnt want this happening to you, would you?</p>
                 </div>
             </div>
 
         </div>
+        <footer>
+            <a href="https://tomioman.github.io/Portfolio/"><img src="https://tomioman.github.io/Portfolio/images/logo_text.png" alt=""></a>
+            <div>
+                <p>Created by <a href="https://tomioman.github.io/Portfolio/" target="_blank">TomioMan</a> &copy; 2025</p>
+                <p>All rights reserved.</p>
+                <p>Project made with intensions to bring members of Dementi SMP closer</p>
+            </div>
+        </footer>
     </div>
 
   <!-- AOS JavaScript -->
@@ -65,6 +75,31 @@
 
   <!-- My Script -->
   <script>
+
+    /* pseudo loading text */
+    const loadingElement = document.getElementById('loadingText');
+    const messages = [
+        'loading.',
+        'loading. .',
+        'loading. . .',
+        'loading.',
+        'loading. .',
+        'loading. . .',
+        'loading.',
+        'loading. .',
+        'loaded ✓'
+    ];
+
+    let index = 0;
+
+    const interval = setInterval(() => {
+        loadingElement.textContent = `(${messages[index]})`;
+        index++;
+
+        if (index >= messages.length) {
+        clearInterval(interval);
+        }
+    }, 300);
 
     /* overlay */
     const audio = document.getElementById('myAudio');
@@ -77,6 +112,8 @@
     function setVolume(level) {
         audio.volume = Math.min(Math.max(level, 0), 1);
     }
+
+    document.body.style.overflow = 'hidden';
 
     overlay.addEventListener('click', () => {
         if (!hasPlayed) {
@@ -93,8 +130,7 @@
     const container = document.getElementById('hoverImage');
     const hoverSound = document.getElementById('hoverSound');
 
-    // Set this value between 0 (mute) and 1 (full volume)
-    const hoverSoundVolume = 0.3; // EDIT THIS NUMBER
+    const hoverSoundVolume = 0.3;
 
     hoverSound.volume = hoverSoundVolume;
 
