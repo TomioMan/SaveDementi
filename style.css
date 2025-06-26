@@ -309,11 +309,11 @@ details details summary.secco::before {
     vertical-align: middle;
 }
 details details summary.beat::before {
-    content: url(Images/icons/Beatenpop\ face.png);
+    content: url(Images/icons/beatenpop\ face.png);
     vertical-align: middle;
 }
 details details summary.adrian::before {
-    content: url(Images/icons/AdrianekNej\ face.png);
+    content: url(Images/icons/adrianeknej\ face.png);
     vertical-align: middle;
 }
 .details-content p {
