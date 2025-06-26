@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Dementi!</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="Images/TomioManCZ Face.png">
+    <link rel="icon" type="image/x-icon" href="Images/icons/TomioManCZ Face.png">
 
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -42,16 +42,67 @@
                 <div class="image-container" id="hoverImage"  data-aos="fade-right">
                     <img src="Images/reaktor1.png" alt="Normal Image">
                     <img class="hover-img" src="Images/reaktor2.png" alt="Hover Image">
-                    <p>You wouldnt want this happening to your reactor, would you?</p>
+                    <p>We want to prevent this happening to YOUR nuclear reactor!</p>
                 </div>
                 <div data-aos="fade-up">
                     <h2>Join us in making Dementi SMP a better place for everyone!</h2>
-                    <details>
-                        <summary> what we offer</summary>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, quasi. Deleniti autem modi ipsa consequatur sit molestias nemo magni et incidunt consectetur? Inventore velit iure sint qui aliquam est ratione!</p>
-                    </details>
-                    <p>Save Dementi is a political party on the Dementi SMP, founded by TomioManCZ. The party aims to bring positive change to the server, focusing on community engagement and development.</p>
-                    <p>The party's platform includes initiatives for better governance, infrastructure improvements, and fostering a vibrant community spirit.</p>
+
+                    <p>Save Dementi is a political party on the Dementi SMP, founded by TomioManCZ. The party aims to bring positive change to the server, focusing on community engagement and development.</p>  
+                    <div class="yap-container"> 
+                        <details class="animated-details">
+                            <summary>Our plans, no matter the votes:</summary>
+                            <div class="details-content">
+                                <p>sex!</p>
+                            </div>
+                        </details>
+                        <details class="animated-details">
+                            <summary>What mods we know:</summary>
+                            <div class="details-content">
+                                <p><span class="span_high">Create</span> <br>
+                                    Fully: <img src="Images/icons/TomioManCZ Face.png" alt=""> <span class="span_little">&lpar;0.5 at least&rpar;</span> <br>
+                                    Mostly: <img src="Images/icons/seccogaming face.png" alt=""> <img src="Images/icons/beatenpop face.png" alt="">
+                                </p>
+                                <p><span class="span_high">Mekanism</span> <br>
+                                    Mostly: <img src="Images/icons/TomioManCZ Face.png" alt=""> <img src="Images/icons/seccogaming face.png" alt=""> <img src="Images/icons/adrianeknej face.png" alt="">
+                                </p>
+                                <p><span class="span_high">Quark</span> <br>
+                                    Mostly: <img src="Images/icons/TomioManCZ Face.png" alt="">
+                                </p>
+                                <p><span class="span_high">Tinkers Co.</span> <br>
+                                    Mostly: <img src="Images/icons/TomioManCZ Face.png" alt=""> <img src="Images/icons/seccogaming face.png" alt=""> <img src="Images/icons/beatenpop face.png" alt=""> <img src="Images/icons/adrianeknej face.png" alt="">
+                                </p>
+                            </div>
+                        </details>
+                        <details class="animated-details">
+                            <summary>Members of Save Dementi:</summary>
+                            <div class="details-content">
+                            <details class="animated-details">
+                                <summary class="tomio">TomioManCZ</summary>
+                                <div class="details-content">
+                                    <p>"um... so uuuh.... i uuh... yeah..."</p>
+                                </div>
+                            </details>
+                            <details class="animated-details">
+                                <summary class="secco" >Seccogaming</summary>
+                                <div class="details-content">
+                                    <p> <img src="https://cdn.discordapp.com/attachments/746337057538048070/1375565998031376494/deda_goblin.gif?ex=685e516a&is=685cffea&hm=63d18b0cc630735ff9e9d135e20787e86f0a43a3f07527fb641fa84f87c4b6d4&" alt=""></p>
+                                </div>
+                            </details>
+                            <details class="animated-details">
+                                <summary class="beat" >Beatenpop</summary>
+                                <div class="details-content">
+                                    <p>"Try finger <br>ㅤbut hole"</p>
+                                </div>
+                            </details>
+                            <details class="animated-details">
+                                <summary class="adrian">AdrianekNej</summary>
+                                <div class="details-content">
+                                    <p><img src="Images/ada.png" alt="" style="width: 100%;"></p>
+                                </div>
+                            </details>
+                            </div>
+                        </details>
+                    </div> 
                 </div>
                 <div>
                     <div class="image-container" id="hoverImage"  data-aos="fade-left">
@@ -80,6 +131,52 @@
 
   <!-- My Script -->
   <script>
+    /*details animated*/
+    const animatedDetails = document.querySelectorAll(".animated-details");
+
+    animatedDetails.forEach(details => {
+        const content = details.querySelector(".details-content");
+
+        // Store original height (optional)
+        let animating = false;
+
+        details.addEventListener("toggle", () => {
+        if (animating) return;
+
+        animating = true;
+        const isOpening = details.open;
+
+        if (isOpening) {
+            content.style.display = "block"; // ensure it's visible
+            const height = content.scrollHeight + "px";
+            content.style.height = "0px";
+
+            requestAnimationFrame(() => {
+            content.style.transition = "height 0.4s ease";
+            content.style.height = height;
+            });
+
+            setTimeout(() => {
+            content.style.height = "auto";
+            animating = false;
+            }, 400);
+
+        } else {
+            const height = content.scrollHeight + "px";
+            content.style.height = height;
+
+            requestAnimationFrame(() => {
+            content.style.transition = "height 0.4s ease";
+            content.style.height = "0px";
+            });
+
+            setTimeout(() => {
+            content.style.display = "none";
+            animating = false;
+            }, 400);
+        }
+        });
+    });
 
     /* pseudo loading text */
     const loadingElement = document.getElementById('loadingText');
@@ -160,9 +257,11 @@
         if (window.scrollY < 150) {
         peekaboo.style.opacity = '100%';
         peekaboo.style.zIndex = '1000';
+        audioVolume = 0.2;
         } else {
         peekaboo.style.opacity = '0%';
         peekaboo.style.zIndex = '-1000';
+        audioVolume = 0.1;
         }
     }
 

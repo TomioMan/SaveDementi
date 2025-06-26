@@ -10,7 +10,7 @@ html {
     src: url('Fonts/CaesarDressing-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: Incosolata;
+    font-family: Inconsolata;
     src: url('Fonts/Console.ttf') format('truetype');
 }
 #overlay {
@@ -96,6 +96,7 @@ html {
     backdrop-filter: blur(10px);
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.1);
+    text-indent: 10px;
 }
 .header{
     z-index: 10;
@@ -243,6 +244,95 @@ html {
     50% { transform: rotate(-5deg); }
     100% { transform: rotate(5deg); }
 }
+
+.yap-container {
+    display: flex;
+    flex-direction: column;
+}
+.details-content {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.4s ease;
+}
+summary {
+    font-family: Inconsolata;
+    font-size: 1.5vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 120%;
+    margin-left: -15%;
+    transition: 0.2s ease-in-out;
+    animation: summary 0.35s ease-in-out infinite;
+}
+@keyframes summary {
+    0% { letter-spacing: 0.02em; padding-left: 20px; }
+    50% { letter-spacing: 0.03em; padding-left: 30px; width: 117.4%;}
+    100% { letter-spacing: 0.02em; padding-left: 20px; }
+}
+summary:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+details details summary {
+    animation: none;
+    width: 90%;
+    margin: 0 0 10px 0;
+} 
+details details summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+}
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details details summary::before{
+    display: inline-block;
+    margin: 0.1em 0.4em 0 0;
+    transition: 0.25s;
+}
+details details summary:hover::before {
+    transform: rotate(360deg) translateY(-2px);
+}
+details details summary.tomio::before {
+    content: url(Images/icons/TomioManCZ\ Face.png);
+    vertical-align: middle;
+}
+details details summary.secco::before {
+    content: url(Images/icons/seccogaming\ face.png);
+    vertical-align: middle;
+}
+details details summary.beat::before {
+    content: url(Images/icons/Beatenpop\ face.png);
+    vertical-align: middle;
+}
+details details summary.adrian::before {
+    content: url(Images/icons/AdrianekNej\ face.png);
+    vertical-align: middle;
+}
+.details-content p {
+    margin: 0 0 30px 0;
+}
+.details-content p .span_high {
+    font-size: 50px;
+    padding: 10px;
+}
+.details-content p .span_little {
+    font-size: 15px;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.034);
+}
+.details-content p img {
+    margin: 0 0 7px 0;
+    vertical-align: middle;
+}
+
 
 footer {
     position: relative;
